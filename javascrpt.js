@@ -91,7 +91,7 @@ function transform(input) {
     input = input.replace(/sqrt\(([^()]+)\)/g, "Math.sqrt($1)");
 
     // power ^
-    input = input.replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)");
+   input = input.replace(/(\([^()]+\)|\d+)\^(\d+)/g, "Math.pow($1,$2)");
 
     // factorial !
     input = input.replace(/(\d+)!/g, "factorial($1)");
